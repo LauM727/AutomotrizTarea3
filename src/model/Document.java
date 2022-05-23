@@ -44,7 +44,7 @@ public class Document{
 			for(int j = 0; j<picture[i].length; j++) {
 				matrix += picture[i][j] + " ";
 			}
-			matrix += "/n";
+			matrix += "\n";
 		}
 		
 		return matrix;
@@ -54,8 +54,7 @@ public class Document{
 		for(int i = 0; i<picture.length; i++) {
 			for(int j = 0; j<picture[i].length; j++) {
 				Random rand = new Random();
-				int maxNumber = 10;
-				int randomNumber = rand.nextInt(maxNumber)+1;
+				int randomNumber = rand.nextInt(9);
 				
 				picture[i][j] = randomNumber;
 			}

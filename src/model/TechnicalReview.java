@@ -7,6 +7,7 @@ public class TechnicalReview extends Document{
 	public TechnicalReview(double price, int year, int gasLevel) {
 		super(price, year);
 		this.gasLevel = gasLevel;
+		fillMatrix();
 	}
 
 	public int getGasLevel() {

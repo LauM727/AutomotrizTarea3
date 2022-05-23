@@ -6,6 +6,7 @@ public class Soat extends Document{
 	public Soat(double price, int year, int coverage) {
 		super(price, year);
 		this.coverage = coverage;
+		fillMatrix();
 	}
 
 	public int getCoverage() {
@@ -21,10 +22,10 @@ public class Soat extends Document{
 		for(int i = 0; i<getPicture().length;i++) {
 			for(int j = 0; j<getPicture()[i].length; j++) {
 				if(i == getPicture().length-1) {
-					message = getPicture()[i][j] + "";
+					message += getPicture()[i][j] + " ";
 				}else {
 					if(j < 1) {
-						message = getPicture()[i][j] + " ";
+						message += getPicture()[i][j] + " ";
 					}else {
 						break;
 					}

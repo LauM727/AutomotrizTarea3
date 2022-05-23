@@ -14,6 +14,7 @@ public class Vehicle{
 	private int km;
 	private boolean isNew;
 	private String id;
+	private boolean haveDocument;
 	
 	//Relation
 	
@@ -30,7 +31,35 @@ public class Vehicle{
 		this.km = km;
 		this.isNew = isNew;
 		this.id = id;
+		documents = new ArrayList<>();
+		haveDocument = false;
 	}
+	
+	
+
+	public boolean isHaveDocument() {
+		return haveDocument;
+	}
+
+
+
+	public void setHaveDocument(boolean haveDocument) {
+		this.haveDocument = haveDocument;
+	}
+
+
+
+	public ArrayList<Document> getDocuments() {
+		return documents;
+	}
+
+
+
+	public void setDocuments(ArrayList<Document> documents) {
+		this.documents = documents;
+	}
+
+
 
 	public int getBasePrice() {
 		return basePrice;
