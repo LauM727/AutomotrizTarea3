@@ -8,7 +8,7 @@ public class Vehicle{
 	
 	private int basePrice;
 	private int soldPrice;
-	private String marca;
+	private String brand;
 	private String model;
 	private int cylinderCapacity;
 	private int km;
@@ -22,10 +22,10 @@ public class Vehicle{
 	
 	//Constructor method
 	
-	public Vehicle(int basePrice, int soldPrice, String marca, String model, int cylinderCapacity, int km, boolean isNew, String id) {
+	public Vehicle(int basePrice, int soldPrice, String brand, String model, int cylinderCapacity, int km, boolean isNew, String id) {
 		this.basePrice = basePrice;
 		this.soldPrice = soldPrice;
-		this.marca = marca;
+		this.brand= brand;
 		this.model = model;
 		this.cylinderCapacity = cylinderCapacity;
 		this.km = km;
@@ -77,12 +77,12 @@ public class Vehicle{
 		this.soldPrice = soldPrice;
 	}
 
-	public String getMarca() {
-		return marca;
+	public String getBrand() {
+		return brand;
 	}
 
-	public void setMarca(String marca) {
-		this.marca = marca;
+	public void setMarca(String brand) {
+		this.brand = brand;
 	}
 
 	public String getModel() {

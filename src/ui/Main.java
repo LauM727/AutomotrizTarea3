@@ -11,12 +11,10 @@ public class Main {
 	
 	private static Concesionary concesionary;
 	private static Scanner lector;
-	private static Scanner lectorS;
 
 	public static void main(String[] args) {
 		concesionary = new Concesionary();
 		lector = new Scanner(System.in);
-		lectorS = new Scanner(System.in);
 		//int basePrice, int soldPrice, String marca, String model, int cylinderCapacity, int km, boolean isNew, String id, int type
 		Motorcycle a1 = new Motorcycle(2,2,"Suzuki", "2013", 2, 1000, false, "PTM-359", 1);
 		Motorcycle a2 = new Motorcycle(2,2,"Suzuki", "2012", 2, 1000, false, "PTM-358", 1);
@@ -82,9 +80,11 @@ public class Main {
 				System.out.println("What is the sold price of vehicle?");
 				int soldP = lector.nextInt();
 				System.out.println("What is the brand of vehicle?");
-				String brand = lectorS.nextLine();
+				String brand = lector.nextLine();
+				lector.nextLine();
+				lector.nextLine();
 				System.out.println("What is the model of vehicle?");
-				String model = lectorS.nextLine();
+				String model = lector.nextLine();
 				System.out.println("What is the cylinder capacity of vehicle?");
 				int cylinder = lector.nextInt();
 				Random random = new Random();
@@ -168,9 +168,11 @@ public class Main {
 				System.out.println("What is the sold price of vehicle?");
 				int soldP = lector.nextInt();
 				System.out.println("What is the brand of vehicle?");
-				String brand = lectorS.nextLine();
+				String marca = lector.nextLine();
+				lector.nextLine();
+				lector.nextLine();
 				System.out.println("What is the model of vehicle?");
-				String model = lectorS.nextLine();
+				String model = lector.nextLine();
 				System.out.println("What is the cylinder capacity of vehicle?");
 				int cylinder = lector.nextInt();
 				System.out.println("What is the km of vehicle?");
@@ -258,9 +260,11 @@ public class Main {
 				System.out.println("What is the sold price of vehicle?");
 				int soldP = lector.nextInt();
 				System.out.println("What is the brand of vehicle?");
-				String brand = lectorS.nextLine();
+				String brand = lector.nextLine();
+				lector.nextLine();
+				lector.nextLine();
 				System.out.println("What is the model of vehicle?");
-				String model = lectorS.nextLine();
+				String model = lector.nextLine();
 				System.out.println("What is the cylinder capacity of vehicle?");
 				int cylinder = lector.nextInt();
 				Random random = new Random();
@@ -312,9 +316,11 @@ public class Main {
 				System.out.println("What is the sold price of vehicle?");
 				int soldP = lector.nextInt();
 				System.out.println("What is the brand of vehicle?");
-				String brand = lectorS.nextLine();
+				String brand = lector.nextLine();
+				lector.nextLine();
+				lector.nextLine();
 				System.out.println("What is the model of vehicle?");
-				String model = lectorS.nextLine();
+				String model = lector.nextLine();
 				System.out.println("What is the cylinder capacity of vehicle?");
 				int cylinder = lector.nextInt();
 				System.out.println("What is the km of vehicle?");
@@ -374,7 +380,7 @@ public class Main {
 	
 	public static void option4() {
 		System.out.println("What is the ID of vehicle: Please enter the id like the example XXX-YYY or motorbike XXX-YYA where A is a other Letter and Y is a number");
-		String answer = lectorS.nextLine();
+		String answer = lector.nextLine();
 		Vehicle temp = concesionary.searchInArray(answer);
 		
 		if(temp.isHaveDocument() == true) {

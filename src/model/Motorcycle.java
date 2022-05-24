@@ -4,8 +4,8 @@ public class Motorcycle extends Vehicle{
 	
 	private MotorType type;
 	
-	public Motorcycle(int basePrice, int soldPrice, String marca, String model, int cylinderCapacity, int km, boolean isNew, String id, int type) {
-		super(basePrice, soldPrice, marca, model, cylinderCapacity, km, isNew, id);
+	public Motorcycle(int basePrice, int soldPrice, String brand, String model, int cylinderCapacity, int km, boolean isNew, String id, int type) {
+		super(basePrice, soldPrice, brand, model, cylinderCapacity, km, isNew, id);
 		
 		switch(type) {
 

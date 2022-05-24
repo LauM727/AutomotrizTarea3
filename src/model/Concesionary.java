@@ -1,8 +1,7 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+
 
 public class Concesionary{
 	
@@ -122,7 +121,7 @@ public class Concesionary{
 			info = "**Car**" + "\n" +
 					"PLACA: " + temp.getId() + "\n" +
 					"KM: " + temp.getKm() + "\n" +
-					"MARCA: " + temp.getMarca() + "\n" +
+					"MARCA: " + temp.getBrand() + "\n" +
 					"MODELO: " + temp.getModel() + "\n" +
 					"SOLD PRICE: " + temp.getSoldPrice() + "\n" +
 					"TypeCombustible: " + typeC + "\n" + 
@@ -135,7 +134,7 @@ public class Concesionary{
 			info = "**MotorBike**" + "\n" +
 					"PLACA: " + temp.getId() + "\n" +
 					"KM: " + temp.getKm() + "\n" +
-					"MARCA: " + temp.getMarca() + "\n" +
+					"MARCA: " + temp.getBrand() + "\n" +
 					"MODELO: " + temp.getModel() + "\n" +
 					"SOLD PRICE: " + temp.getSoldPrice() + "\n" +
 					"Type of Car: " + temp1.getType() + "\n" +

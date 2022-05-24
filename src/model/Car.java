@@ -9,8 +9,8 @@ public class Car extends Vehicle implements Gasoline, Electric, Hybrid{
 	private int typeC;
 	
 	
-  public Car(int basePrice, int soldPrice, String marca, String model, int cylinderCapacity, int km, boolean isNew, String id, int type, int doors, boolean isPolarized, int typeC) {
-	  super(basePrice, soldPrice, marca, model, cylinderCapacity, km, isNew, id);
+  public Car(int basePrice, int soldPrice, String brand, String model, int cylinderCapacity, int km, boolean isNew, String id, int type, int doors, boolean isPolarized, int typeC) {
+	  super(basePrice, soldPrice, brand, model, cylinderCapacity, km, isNew, id);
 	  
 	  switch(type) {
 
