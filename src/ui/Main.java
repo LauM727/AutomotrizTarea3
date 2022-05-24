@@ -18,11 +18,11 @@ public class Main {
 		lector = new Scanner(System.in);
 		lectorS = new Scanner(System.in);
 		//int basePrice, int soldPrice, String marca, String model, int cylinderCapacity, int km, boolean isNew, String id, int type
-		Motorcycle a1 = new Motorcycle(2,2,"Susuki", "2013", 2, 200, false, "PTM-359", 1);
-		Motorcycle a2 = new Motorcycle(2,2,"Susuki", "2012", 2, 200, false, "PTM-358", 1);
-		Motorcycle a3 = new Motorcycle(2,2,"Susuki", "2014", 2, 200, false, "PTM-357", 1);
-		Car b1 = new Car(2, 2, "Chevrolet", "2012", 2, 100, false, "PTM-352", 1, 4, true, 1);
-		Car b2 = new Car(2, 2, "Mazda", "2012", 2, 100, false, "PTM-351", 1, 4, true, 2);
+		Motorcycle a1 = new Motorcycle(2,2,"Suzuki", "2013", 2, 1000, false, "PTM-359", 1);
+		Motorcycle a2 = new Motorcycle(2,2,"Suzuki", "2012", 2, 1000, false, "PTM-358", 1);
+		Motorcycle a3 = new Motorcycle(2,2,"Suzuki", "2014", 2, 800, false, "PTM-357", 1);
+		Car b1 = new Car(2, 2, "Chevrolet", "2012", 2, 1600, false, "PTM-352", 1, 4, true, 1);
+		Car b2 = new Car(2, 2, "Mazda", "2012", 2, 1600, false, "PTM-351", 1, 4, true, 2);
 		Car b3 = new Car(2, 2, "Mazda", "2012", 2, 0, true, "PTM-351", 1, 4, true, 2);
 		System.out.println(concesionary.saveParking(a1));
 		System.out.println(concesionary.saveParking(a2));
