@@ -1,11 +1,10 @@
 package ui;
+import model.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
-
-import model.*;
 
 public class Main {
 	
@@ -420,16 +419,18 @@ public class Main {
 	}
 	
 	public static void option6() {
-		System.out.println("[1] Listado de vehículos (y su información) dado un rango de años.");
-		System.out.println("[2] Datos del vehículo más antiguo y más nuevo");
-		System.out.println("[3] Porcentaje de ocupación del parqueadero");
+		System.out.println("[1] List of vehicles (and their information) given a range of years.");
+		System.out.println("[2] Data of the oldest and newest vehicle");
+		System.out.println("[3] Parking lot occupancy rate");
 		
 		int answer = lector.nextInt();
 		
 		if(answer == 1) {
 			System.out.println("Since what year do you want search? The first year is the >");
 			int year1 = lector.nextInt();
+			lector.nextLine();
 			int year2 = lector.nextInt();
+			lector.nextLine();
 			System.out.println(concesionary.reportVehicleofRangeYear(year1, year2));
 			menu();
 		}else if(answer == 2) {
