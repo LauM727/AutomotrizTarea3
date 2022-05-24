@@ -25,6 +25,7 @@ public class Car extends Vehicle implements Gasoline, Electric, Hybrid{
       
 	  this.doors = doors;
 	  this.isPolarized = isPolarized;
+	  this.typeC = typeC;
   }
 
 

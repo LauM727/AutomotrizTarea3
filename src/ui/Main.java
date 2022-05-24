@@ -1,4 +1,7 @@
 package ui;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,9 +20,16 @@ public class Main {
 		//int basePrice, int soldPrice, String marca, String model, int cylinderCapacity, int km, boolean isNew, String id, int type
 		Motorcycle a1 = new Motorcycle(2,2,"Susuki", "2013", 2, 200, false, "PTM-359", 1);
 		Motorcycle a2 = new Motorcycle(2,2,"Susuki", "2012", 2, 200, false, "PTM-358", 1);
-		concesionary.saveParking(a1);
-		concesionary.saveParking(a2);
-		
+		Motorcycle a3 = new Motorcycle(2,2,"Susuki", "2014", 2, 200, false, "PTM-357", 1);
+		Car b1 = new Car(2, 2, "Chevrolet", "2012", 2, 100, false, "PTM-352", 1, 4, true, 1);
+		Car b2 = new Car(2, 2, "Mazda", "2012", 2, 100, false, "PTM-351", 1, 4, true, 2);
+		Car b3 = new Car(2, 2, "Mazda", "2012", 2, 0, true, "PTM-351", 1, 4, true, 2);
+		System.out.println(concesionary.saveParking(a1));
+		System.out.println(concesionary.saveParking(a2));
+		System.out.println(concesionary.saveParking(a3));
+		System.out.println(concesionary.saveParking(b1));
+		System.out.println(concesionary.saveParking(b2));
+		System.out.println(concesionary.saveParking(b3));
 		menu();	
 	}
 	
@@ -32,6 +42,7 @@ public class Main {
 		System.out.println("4. Generate state of documents based on id of vehicle");
 		System.out.println("5. Generate map of free spaces of parking");
 		System.out.println("6. Generate reports about ocupation of parking");
+		System.out.println("7. Grow up the parking");
 		System.out.println("---------------------------------------------------");
 		System.out.println("Select a option");
 		
@@ -40,15 +51,17 @@ public class Main {
 		if(answer == 1) {
 			option1();
 		}else if(answer == 2) {
-			
+			option2();
 		}else if(answer == 3) {
-			
+			option3();
 		}else if(answer == 4) {
 			option4();
 		}else if(answer == 5) {
 			option5();
 		}else if(answer == 6) {
 			option6();
+		}else if(answer == 7) {
+			option7();
 		}else {
 			System.out.println("Incorrect option, please try again");
 			menu();
@@ -414,11 +427,78 @@ public class Main {
 			System.out.println(concesionary.reportVehicleofRangeYear(year1, year2));
 			menu();
 		}else if(answer == 2) {
-		
+			System.out.println("List of vehicles order from oldest to youngest");
+			ArrayList<Vehicle> vehicles = concesionary.listOfVehiclesofParking();
+			Collections.sort(vehicles, new Comparator<Vehicle>() {
+				@Override
+				public int compare(Vehicle p1, Vehicle p2) {
+					return new Integer(Integer.parseInt(p2.getModel())).compareTo(new Integer(Integer.parseInt(p1.getModel())));
+				}
+			});
+			System.out.println(concesionary.reportMoreNewaOld(vehicles));
+			menu();
+			
 		}else if(answer == 3) {
 			System.out.println("El porcentaje de ocupacion del parqueadero es de: " + concesionary.averageParking() + "%");
 			menu();
 		}
+	}
+	
+	public static void option3() {
+		System.out.println("Generate reports of: [1] Type of vehicles, [2] Type of Combustible, [3] Used or new car");
+		int answer = lector.nextInt();
+		if(answer == 1) {
+			System.out.println("Which elements do you want to see [1]Car, [2]Motorbyke");
+			int answer2 = lector.nextInt();
+			if(answer2 == 1) {
+				System.out.println(concesionary.reportOfType(true));
+				menu();
+			}else if(answer2 == 2) {
+				System.out.println(concesionary.reportOfType(false));
+				menu();
+			}
+		}else if(answer == 2) {
+			System.out.println("Which elements do you want to see [1] Gasoline, [2] Electric, [3]Hybrid");
+			int answer2 = lector.nextInt();
+			if(answer2 == 1) {
+				System.out.println(concesionary.reportOfTypeC(answer2));
+				menu();
+			}else if(answer2 == 2) {
+				System.out.println(concesionary.reportOfTypeC(answer2));
+				menu();
+			}else if(answer2 == 3) {
+				System.out.println(concesionary.reportOfTypeC(answer2));
+				menu();
+				}
+			}else if(answer == 3) {
+			System.out.println("Which elements do you want to see: [1]New, [2]Used");
+			int answer2 = lector.nextInt();
+			if(answer2 == 1) {
+				System.out.println(concesionary.reportOfVehicleNeworUsed(true));
+				menu();
+			}else if(answer2 == 2) {
+				System.out.println(concesionary.reportOfVehicleNeworUsed(false));
+				menu();
+			}
+		}
+	}
+	
+	public static void option7() {
+		System.out.println("Do you like grow up the parking? The actual size is: " + concesionary.getParking().length + "[1] Yes, [2]No");
+		int answer = lector.nextInt();
+		if(answer == 1) {
+			System.out.println("What is the new size of matrix in rows, the new number should be > of the last size");
+			int answer2 = lector.nextInt();
+			System.out.println(concesionary.growUpMatrix(answer2));
+			menu();
+		}else {
+			menu();
+		}
+	}
+	
+	public static void option2() {
+		System.out.println(concesionary.reportAllVehicles());
+		menu();
 	}
 	
 	
